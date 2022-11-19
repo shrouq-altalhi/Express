@@ -115,13 +115,13 @@ app.delete("/grades/:id", (req, res) => {
 app.get("/trackers", (req, res) => {
   return res.json(trackers);
 });
+
 app.get("/trackers/:title", (req, res) => {
-  const tracker = req.body as ITracker;
   const { title } = req.params;
   const updatedList = trackers.filter((uTrack) => {
     return uTrack.title === title;
   });
-  console.log(tracker.title);
+  // console.log(tracker.title);
   return res.json(updatedList);
 });
 
